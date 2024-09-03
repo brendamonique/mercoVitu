@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Site</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background: linear-gradient(to right, #000000, #0055ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            gap: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .item {
+            text-align: center;
+        }
+
+        .circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .circle::before {
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background-color: white;
+            z-index: -1;
+        }
+
+        .circle::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: white;
+            z-index: -1;
+        }
+
+        .title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .text {
+            font-size: 1rem;
+            color: white;
+        }
+
+        .bg-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .bg-lines::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.1), transparent);
+            background-size: 200px 200px;
+            transform: rotate(45deg);
+        }
+
+        .bg-lines::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to left, transparent, rgba(0, 0, 0, 0.1), transparent);
+            background-size: 200px 200px;
+            transform: rotate(-45deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-lines"></div>
+    <div class="container">
+        <div class="item">
+            <div class="circle">01</div>
+            <h3 class="title">HIGIENE</h3>
+            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate nulla at ante rhoncus, vel efficitur felis condimentum. Proin odio odio.</p>
+        </div>
+        <div class="item">
+            <div class="circle">02</div>
+            <h3 class="title">CUIDADOS COM BEBÊ</h3>
+            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate nulla at ante rhoncus, vel efficitur felis condimentum. Proin odio odio.</p>
+        </div>
+        <div class="item">
+            <div class="circle">03</div>
+            <h3 class="title">REMÉDIO</h3>
+            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate nulla at ante rhoncus, vel efficitur felis condimentum. Proin odio odio.</p>
+        </div>
+        <div class="item">
+            <div class="circle">04</div>
+            <h3 class="title">OUTRO</h3>
+            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate nulla at ante rhoncus, vel efficitur felis condimentum. Proin odio odio.</p>
+        </div>
+    </div>
+</body>
+</html>
